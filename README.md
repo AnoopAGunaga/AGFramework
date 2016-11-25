@@ -9,6 +9,8 @@ STEPS TO INTEGRATE :
 
 2. Call SDK initialise method as
 	 [[AGFramework sharedInstance] initialise:KEY logLevel:LOGLEVEL];
+KEY - SDK License key (Sample key : dsfkhskjdfbksjdfkjsdf)
+
 	LOG LEVEL - There are 3 types 
 	(a) All - (eAGFrameworkLogLevelAll)
 	(b) Minimal - (eAGFrameworkLogLevelMinimal)
