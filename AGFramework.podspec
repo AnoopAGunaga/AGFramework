@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
         'YOURNAME' => 'anoop.gunaga@robosoftin.com'
     }
     s.source            = {
-        :git => 'https://github.com/AnoopAGunaga/AGFramework/tree/1.0.1',
+        :git => 'https://github.com/AnoopAGunaga/AGFramework.git',
         :tag => '1.0.1'
     }
     s.source_files      = 'AGFramework/*.{m,h}', 'AGFramework/*/*.{m,h}', 'AGFramework/*/*/*.{m,h}'
