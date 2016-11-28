@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name              = 'AGFramework'
-    s.version           = '1.0.2'
+    s.version           = '1.0.4'
     s.summary           = 'Assignment Dynamic framework'
     s.homepage          = 'https://github.com/AnoopAGunaga/AGFramework'
     s.license           = {
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
     }
     s.source            = {
         :git => 'https://github.com/AnoopAGunaga/AGFramework.git',
-        :tag => '1.0.2'
+        :tag => '1.0.4'
     }
     s.source_files      = 'AGFramework/*.{m,h}', 'AGFramework/*/*.{m,h}', 'AGFramework/*/*/*.{m,h}'
     s.public_header_files =  'AGFramework/*.h', 'AGFramework/FrameworkEvent/*.h'
