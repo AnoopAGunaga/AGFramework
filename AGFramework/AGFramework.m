@@ -112,7 +112,7 @@ static NSString *SDKValidationKey1 = @"dsfkhskjdfbksjdfkjsdf";
     launchCount = launchCount + 1;
     [AGFrameworkDefaults setAppLaunchCount:launchCount];
     
-    LOG_ALL(([NSString stringWithFormat:@"%ld",launchCount]));
+    LOG_ALL(([NSString stringWithFormat:@"%ld",(long)launchCount]));
 }
 
 - (void) updateAppUsageInfo {
