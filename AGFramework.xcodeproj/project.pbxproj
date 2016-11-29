@@ -33,6 +33,7 @@
 		6E1C1B981DE6C4A0000E3DE8 /* AGFrameworkDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C1B961DE6C4A0000E3DE8 /* AGFrameworkDefaults.m */; };
 		6E1C1BF11DE6F557000E3DE8 /* AGFrameworkUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E1C1BEF1DE6F557000E3DE8 /* AGFrameworkUtility.h */; };
 		6E1C1BF21DE6F557000E3DE8 /* AGFrameworkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C1BF01DE6F557000E3DE8 /* AGFrameworkUtility.m */; };
+		6E6179371DEC0A6600E3A907 /* AGFraeworkConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E6179361DEC0A6600E3A907 /* AGFraeworkConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		6E1C1B961DE6C4A0000E3DE8 /* AGFrameworkDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGFrameworkDefaults.m; path = FrameworkUtilities/Defaults/AGFrameworkDefaults.m; sourceTree = "<group>"; };
 		6E1C1BEF1DE6F557000E3DE8 /* AGFrameworkUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGFrameworkUtility.h; path = FrameworkUtilities/Utility/AGFrameworkUtility.h; sourceTree = "<group>"; };
 		6E1C1BF01DE6F557000E3DE8 /* AGFrameworkUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGFrameworkUtility.m; path = FrameworkUtilities/Utility/AGFrameworkUtility.m; sourceTree = "<group>"; };
+		6E6179361DEC0A6600E3A907 /* AGFraeworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGFraeworkConstants.h; path = FrameworkUtilities/Constants/AGFraeworkConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		6E1C1B901DE6C2B9000E3DE8 /* FrameworkUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				6E6179341DEC0A3000E3A907 /* Constants */,
 				6E1C1BEE1DE6F52F000E3DE8 /* Utility */,
 				6E1C1B991DE6C4A9000E3DE8 /* Defaults */,
 			);
@@ -167,6 +170,14 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		6E6179341DEC0A3000E3A907 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6E6179361DEC0A6600E3A907 /* AGFraeworkConstants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -176,6 +187,7 @@
 			files = (
 				6E1C1B8E1DE6C1B8000E3DE8 /* AGFrameworkException.h in Headers */,
 				6E1C1BF11DE6F557000E3DE8 /* AGFrameworkUtility.h in Headers */,
+				6E6179371DEC0A6600E3A907 /* AGFraeworkConstants.h in Headers */,
 				6E1C1B891DE6C18F000E3DE8 /* AGFrameworkEvent.h in Headers */,
 				6E1C1B971DE6C4A0000E3DE8 /* AGFrameworkDefaults.h in Headers */,
 				6E1C1B231DE6B139000E3DE8 /* AGFramework.h in Headers */,

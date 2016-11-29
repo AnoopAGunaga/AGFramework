@@ -7,8 +7,7 @@
 //
 
 #import "AGFrameworkDefaults.h"
-
-#define USER_DEFAULTS  [NSUserDefaults standardUserDefaults]
+#import "AGFraeworkConstants.h"
 
 static NSString *const kKeyAnalyticsInfo = @"AGAnalyticsInfo";
 static NSString *const kAppUsageInfoKey = @"AppUsageInfo";
@@ -36,8 +35,8 @@ static NSString *const kAppLaunchCountKey = @"AppLaunchCountKey";
 
 #pragma mark - App Usage info
 
-+ (void) setAppUsageInfo:(double)launchCount {
-    [USER_DEFAULTS setDouble:launchCount
++ (void) setAppUsageInfo:(double)usageInfo {
+    [USER_DEFAULTS setDouble:usageInfo
                        forKey:kAppUsageInfoKey];
 }
 

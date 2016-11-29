@@ -13,7 +13,7 @@
 + (void) log:(NSString *)logInfo
     logLevel:(AGFrameworkLogLevel)level {
     
-    switch ([[AGFramework sharedInstance] frameworkLogLevel]) {
+    switch ([AGFramework frameworkLogLevel]) {
         case eAGFrameworkLogLevelAll: {
             NSLog(@"%@",logInfo);
         }
@@ -36,7 +36,6 @@
         default:
             break;
     }
-    
 }
 
 @end

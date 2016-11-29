@@ -11,9 +11,11 @@
 
 @interface AGFrameworkUtility : NSObject
 
-#define LOG(logInfo, level) [AGFrameworkUtility log:logInfo logLevel:level]
-
-
+/*!
+ *  Use this method to handle the SDK logs based on user preference which he set during initiailisation
+ *  @param logInfo The text to be logged
+ *  @param level The SDK log preference level
+ */
 + (void) log:(NSString *)logInfo
     logLevel:(AGFrameworkLogLevel)level;
 

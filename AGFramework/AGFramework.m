@@ -44,36 +44,46 @@ static NSString *SDKValidationKey1 = @"dsfkhskjdfbksjdfkjsdf";
 }
 
 
-- (void) initialise:(NSString *)key logLevel:(AGFrameworkLogLevel)level {
-    
++ (void) initialise:(NSString *)key logLevel:(AGFrameworkLogLevel)level {
+  
     if (![key isEqualToString:SDKValidationKey1]) {
-        self.activationStatus = NO;
+        AGFRAMEWORK_SHARED_INSTANCE.activationStatus = NO;
         [AGFrameworkException raiseKeyMisMatchException];
     } else {
-        self.logLevel = level;
-        self.activationStatus = YES;
+        NSLog(@"AGFRAMEWORK version : %lf", AGFrameworkVersionNumber);
+        AGFRAMEWORK_SHARED_INSTANCE.logLevel = level;
+        AGFRAMEWORK_SHARED_INSTANCE.activationStatus = YES;
     }
 }
 
 #pragma mark - SDK functionalities
 
-- (AGFrameworkLogLevel) frameworkLogLevel {
-    return _logLevel;
++ (AGFrameworkLogLevel) frameworkLogLevel {
+    [AGFramework verifyActivationAndProceed];
+    return AGFRAMEWORK_SHARED_INSTANCE.logLevel;
 }
 
-- (BOOL) activationStatus {
-    return _activationStatus;
++ (BOOL) activationStatus {
+    return AGFRAMEWORK_SHARED_INSTANCE.activationStatus;
 }
 
-- (NSInteger) appLaunchCount {
++ (NSInteger) appLaunchCount {
+    [AGFramework verifyActivationAndProceed];
     return [AGFrameworkDefaults getAppLaunchCount];
 }
 
-- (double) appUsageInfo {
++ (double) appUsageInfo {
+    [AGFramework verifyActivationAndProceed];
     return [AGFrameworkDefaults getAppUsageInfo];
 }
 
 #pragma mark - SDK internal methods
+
++ (void) verifyActivationAndProceed {
+    if (NO == [AGFramework activationStatus]) {
+        [AGFrameworkException raiseKeyMisMatchException];
+    }
+}
 
 - (void) registerForNotifications {
     [NOTIFICATION_CENTER addObserver:self
@@ -102,7 +112,7 @@ static NSString *SDKValidationKey1 = @"dsfkhskjdfbksjdfkjsdf";
     launchCount = launchCount + 1;
     [AGFrameworkDefaults setAppLaunchCount:launchCount];
     
-    LOG(([NSString stringWithFormat:@"%ld",(long)launchCount]), eAGFrameworkLogLevelAll);
+    LOG_ALL(([NSString stringWithFormat:@"%ld",launchCount]));
 }
 
 - (void) updateAppUsageInfo {
@@ -111,29 +121,28 @@ static NSString *SDKValidationKey1 = @"dsfkhskjdfbksjdfkjsdf";
     
     usage = usage + (currentTime - launchTime);
     [AGFrameworkDefaults setAppUsageInfo:usage];
-    LOG(([NSString stringWithFormat:@"APP USAGE INFO : %lf",usage]), eAGFrameworkLogLevelAll);
+    LOG_ALL(([NSString stringWithFormat:@"APP USAGE INFO : %lf",usage]));
 }
 
 #pragma mark - Notification handlers
 
 - (void) appDidFinishLaunch {
-    [self updateLaunchCount];
+    [AGFRAMEWORK_SHARED_INSTANCE updateLaunchCount];
     launchTime = [NSDate timeIntervalSinceReferenceDate];
-    LOG(@"APP DID FINISH LAUNCH", eAGFrameworkLogLevelAll);
-    
+    LOG_ALL(@"APP DID FINISH LAUNCH");
 }
 
 - (void) appDidEnterBackground {
-    LOG(@"APP DID ENTER BACKGROUND", eAGFrameworkLogLevelAll);
+    LOG_ALL(@"APP DID ENTER BACKGROUND");
 }
 
 - (void) appWillEnterForeground {
-    LOG(@"APP DID ENTER BACKGROUND", eAGFrameworkLogLevelAll);
+    LOG_ALL(@"APP DID ENTER BACKGROUND");
 }
 
 - (void) appWillTerminate {
     [self updateAppUsageInfo];
-    LOG(@"APP WILL TERMINATE", eAGFrameworkLogLevelAll);
+    LOG_ALL(@"APP WILL TERMINATE");
 }
 
 

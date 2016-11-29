@@ -20,11 +20,11 @@
 
 + (void) postEventInfo:(NSDictionary *)attributes {
     
-    if (YES == [[AGFramework sharedInstance] activationStatus]) {
-        LOG(@"EVENTS POSTED SUCCESSFULLY", eAGFrameworkLogLevelMinimal);
+    if (YES == [AGFramework activationStatus]) {
+        LOG_MINIMAL(@"EVENTS POSTED SUCCESSFULLY");
         [AGFrameworkDefaults saveEventInfo:attributes];
     } else {
-        LOG(@"EVENTS INFO POST FAILED", eAGFrameworkLogLevelMinimal);
+        LOG_MINIMAL(@"EVENTS INFO POST FAILED");
         [AGFrameworkException raiseSDKNotInitialisedException];
     }
 }

@@ -10,6 +10,10 @@
 
 @interface AGFrameworkEvent : NSObject
 
+/*!
+ *  Use this method to post the application event information to the SDK
+ *  @param attributes The Event info in the form of key-value pair
+ */
 + (void) postEventInfo:(NSDictionary *)attributes;
 
 @end

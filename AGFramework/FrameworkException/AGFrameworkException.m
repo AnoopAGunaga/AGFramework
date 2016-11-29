@@ -20,10 +20,8 @@
         @throw keyMisMatchException;
     }
     @catch(NSException *keyMisMatchException) {
-        
-        LOG(@"\n*************************************\n", eAGFrameworkLogLevelError);
-        LOG(([NSString stringWithFormat:@"INVALID REGISTRATION KEY EXCEPTION : %@", keyMisMatchException.description]), eAGFrameworkLogLevelError);
-        LOG(@"\n*************************************\n", eAGFrameworkLogLevelError);
+        @throw keyMisMatchException;
+        //LOG_ERROR(([NSString stringWithFormat:@"INVALID REGISTRATION KEY EXCEPTION : %@", keyMisMatchException.description]));
     }
 }
 
@@ -36,12 +34,9 @@
                                              userInfo:nil];
         @throw sdkNotInitialised;
     }
-    @catch(NSException *sdkNotInitialised) {
-        
-        LOG(@"\n*************************************\n", eAGFrameworkLogLevelError);
-        LOG(([NSString stringWithFormat:@"INVALID REGISTRATION KEY EXCEPTION : %@", sdkNotInitialised.description]), eAGFrameworkLogLevelError);
-        LOG(@"\n*************************************\n", eAGFrameworkLogLevelError);
-        
+    @catch(NSException *sdkNotInitialisedException) {
+        @throw sdkNotInitialisedException;
+        //LOG_ERROR(([NSString stringWithFormat:@"INVALID REGISTRATION KEY EXCEPTION : %@", sdkNotInitialisedException.description]));
     }
 }
 
