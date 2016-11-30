@@ -304,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/$(PROJECT_DIR)/Scripts/AGFramework_Build_Script.sh";
+			shellScript = "set -e\n\n# Step 1.   Set up enviornment vars.\n\nFRAMEWORK_NAME=\"AGFramework\"\n\n# Step 2. Remove earlier build remnants.\nif [ -d \"${SRCROOT}/build\" ]; then\nrm -rf \"${SRCROOT}/build\"\nfi\n\n# Step 3a.      Build for device architecture.\nxcodebuild -target \"${FRAMEWORK_NAME}\" clean build  -configuration Release -arch arm64 -arch armv7 -arch armv7s only_active_arch=no defines_module=yes -sdk \"iphoneos\"\n\n# Step 3b.      Build for Simulators' architecture.\nxcodebuild -target \"${FRAMEWORK_NAME}\" clean build  -configuration Release -arch x86_64 -arch i386 only_active_arch=no defines_module=yes -sdk \"iphonesimulator\"\n\n# Step 4.       Remove 'Builds' folder\nrm -Rf \"Builds/AGFramework\"\n\necho $pwd\n# Step 7.   Create 'Builds' folder\nmkdir -p \"Builds/AGFramework\"\n\n# Step 7.   Copy temporary built framework to Builds folder, which will be replace when we\n# create lipo merge version.\ncp -r \"${SRCROOT}/build/Release-iphoneos/${FRAMEWORK_NAME}.framework\" \"Builds/AGFramework/${FRAMEWORK_NAME}.framework\"\n\n# Step 8.   Create Universal framework by merging device and simulator builds using 'lipo' cmd.\nlipo -create -output \"Builds/AGFramework/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${SRCROOT}/build/Release-iphoneos/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${SRCROOT}/build/Release-iphonesimulator/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# Step 9.   Delete un-wanted build folder created by Xcode.\n# Delete the most recent build.\nif [ -d \"${SRCROOT}/build\" ]; then\nrm -rf \"${SRCROOT}/build\"\nfi\n\nopen \"Builds/AGFramework\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -507,6 +507,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -517,6 +518,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
