@@ -23,7 +23,7 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
 /*!
  *  Initialize the sdk. This must be called before any other API for the SDK is used.
  *  @param key License key for the SDK
- *  @praam level SDK log level
+ *  @param level SDK log level
  */
 + (void) initialise:(NSString *)key logLevel:(AGFrameworkLogLevel)level;
 

@@ -8,6 +8,7 @@
 
 #import "AGFrameworkDefaults.h"
 #import "AGFraeworkConstants.h"
+#import "AGFrameworkUtility.h"
 
 static NSString *const kKeyAnalyticsInfo = @"AGAnalyticsInfo";
 static NSString *const kAppUsageInfoKey = @"AppUsageInfo";
