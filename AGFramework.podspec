@@ -24,6 +24,4 @@ Pod::Spec.new do |s|
     s.framework    = 'SystemConfiguration'
     s.ios.deployment_target  = '8.0'
     s.ios.framework  = 'UIKit'
-    s.xcconfig = {'OTHER_LDFLAGS' => '-ObjC'}
-
 end
