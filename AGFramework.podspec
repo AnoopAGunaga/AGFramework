@@ -9,15 +9,17 @@ Pod::Spec.new do |s|
         :file => 'LICENSE'
     }
     s.author            = {
-        'YOURNAME' => 'anoop.gunaga@robosoftin.com'
+        'iOS Dev team' => 'anoop.gunaga@robosoftin.com'
     }
+    s.platform = :ios, '8.0'
+    s.ios.deployment_target = '8.0'
     s.source            = {
         :git => 'https://github.com/AnoopAGunaga/AGFramework.git',
         :tag => '1.0.0'
     }
-    s.source_files      = 'AGFramework/*.{m,h}', 'AGFramework/*/*.{m,h}', 'AGFramework/*/*/*.{m,h}'
+    s.source_files      = 'AGFramework/*.{h}', 'AGFramework/*/*.{h}', 'AGFramework/*/*/*.{h}'
     
-
+    s.frameworks = 'AGFramework.framework'
     s.requires_arc      = true
     s.framework    = 'SystemConfiguration'
     s.ios.deployment_target  = '8.0'
