@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
         :git => 'https://github.com/AnoopAGunaga/AGFramework.git',
         :tag => '1.0.0'
     }
-    s.source_files      = 'AGFramework/*.{h}', 'AGFramework/*/*.{h}', 'AGFramework/*/*/*.{h}'
-    
+
+    s.vendored_frameworks = 'AGFramework.framework'
     s.frameworks = 'AGFramework.framework'
     s.requires_arc      = true
     s.framework    = 'SystemConfiguration'
