@@ -30,7 +30,7 @@ KEY - SDK License key (Sample key : dsfkhskjdfbksjdfkjsdf)
 	- Pod file will be generated.
 
 3. open Podfile created and add below line under your project target
-	- pod ‘AGFramework’, ‘~> 1.0.0’
+	- pod ‘AGFramework’, ‘~> 1.0’
 
 4. Save it. 
 5. Run ‘pod install’
