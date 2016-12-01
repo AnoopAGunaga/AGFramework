@@ -19,6 +19,9 @@ KEY - SDK License key (Sample key : dsfkhskjdfbksjdfkjsdf)
 3. Post the event as a dictionary using the AGFrameworkEvent class
 	[AGFrameworkEvent postEventInfo:@{@“AppVersion”:@“1.0”}];
 
+
+
+
 - Cocoapod integration
 
 1. Navigate to your project folder
@@ -27,6 +30,7 @@ KEY - SDK License key (Sample key : dsfkhskjdfbksjdfkjsdf)
 	- Pod file will be generated.
 
 3. open Podfile created and add below line under your project target
-	pod ‘AGFramework’, ‘~> 1.0.0’
+	- pod ‘AGFramework’, ‘~> 1.0.0’
 
-4. Save it. Run ‘pod install’
+4. Save it. 
+5. Run ‘pod install’
