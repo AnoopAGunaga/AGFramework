@@ -1,0 +1,6 @@
+framework module AGFramework {
+  umbrella header "AGFramework.h"
+
+  export *
+  module * { export * }
+}
