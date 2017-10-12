@@ -30,7 +30,7 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
 /*!
  *  Initialize the sdk. This must be called before any other API for the SDK is used.
  */
-+ (void) initialise;
++ (void) initialize;
 
 /*!
  *  Use this method to get the app launch count
