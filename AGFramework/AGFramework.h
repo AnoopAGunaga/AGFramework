@@ -26,6 +26,7 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
  *  @param level SDK log level
  */
 + (void) initialise:(NSString *)key logLevel:(AGFrameworkLogLevel)level;
++ (void) initialise;
 
 
 /*!
