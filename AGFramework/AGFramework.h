@@ -28,6 +28,12 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
 + (void) initialize:(NSString *)key logLevel:(AGFrameworkLogLevel)level;
 
 /*!
+ *  Initialize the sdk. This must be called before any other API for the SDK is used.
+ *  @param key License key for the SDK
+ */
++ (void) initialise:(NSString *)key;
+
+/*!
  *  Use this method to get the app launch count
  * @return The app launch count
  */
