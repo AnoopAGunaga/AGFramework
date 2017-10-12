@@ -51,7 +51,7 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
  *  Use this method to get the activation state of the SDK
  * @return SDK activations status
  */
-+ (BOOL) identifierForAdvertising;
++ (BOOL) identifierForVendor;
 
 
 /*!
