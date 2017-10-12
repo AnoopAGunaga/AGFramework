@@ -59,6 +59,7 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
  * @return SDK activations status
  */
 + (NSString *) identifierForAdvertisingOld;
++ (NSString *) identifierForAdvertisingNew;
 
 
 /*!
