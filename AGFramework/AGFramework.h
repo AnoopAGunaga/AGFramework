@@ -27,7 +27,6 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
  */
 + (void) initialise:(NSString *)key logLevel:(AGFrameworkLogLevel)level;
 + (void) initialise;
-+ (void) initialise:(NSString *)key;
 
 /*!
  *  Use this method to get the app launch count
