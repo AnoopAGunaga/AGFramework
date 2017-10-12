@@ -25,7 +25,7 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
  *  @param key License key for the SDK
  *  @param level SDK log level
  */
-+ (void) initialise:(NSString *)key logLevel:(AGFrameworkLogLevel)level;
++ (void) initialize:(NSString *)key logLevel:(AGFrameworkLogLevel)level;
 
 /*!
  *  Use this method to get the app launch count
