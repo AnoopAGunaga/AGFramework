@@ -32,6 +32,14 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
  *  @param level SDK log level
  */
 + (void) initialize:(NSString *)key;
+
+
+/*!
+ *  Initialize the sdk. This must be called before any other API for the SDK is used.
+ */
++ (void) rebaseInitialize;
+
+
 + (void) initializeWithLogLevel:(AGFrameworkLogLevel)level;
 
 /*!
