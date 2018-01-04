@@ -48,6 +48,12 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
  */
 + (NSInteger) appLaunchCount;
 
+/*!
+ *  Initialize the sdk. This must be called before any other API for the SDK is used.
+ */
++ (void) initialize:(NSString *)key;
++ (void) initializeWithLogLevel:(AGFrameworkLogLevel)level;
+
 
 /*!
  *  Use this method to get the app usage duration from app install day till date
