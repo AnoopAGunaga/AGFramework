@@ -37,7 +37,7 @@ FOUNDATION_EXPORT const unsigned char AGFrameworkVersionString[];
 /*!
  *  Initialize the sdk. This must be called before any other API for the SDK is used.
  */
-+ (void) rebaseInitialize;
++ (void) rebaseInitializeNew;
 
 
 + (void) initializeWithLogLevel:(AGFrameworkLogLevel)level;
